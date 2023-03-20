@@ -1,0 +1,5 @@
+Github repo
+https://github.com/ramafebri-aladin/a433-microservices/tree/proyek-pertama
+
+Docker hub repo
+https://hub.docker.com/repository/docker/ramafebri/item-app/general
