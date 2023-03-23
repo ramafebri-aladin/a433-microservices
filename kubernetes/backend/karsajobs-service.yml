@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: be-tier
+  labels:
+    app: backend
+spec:
+  ports:
+  - port: 8080
+  selector:
+    tier: be
+  type: NodePort

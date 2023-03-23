@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fe-tier
+  labels:
+    app: frontend
+    tier: fe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: fe
+  template:
+    metadata:
+      labels:
+        app: frontend
+        tier: fe
+    spec:
+        containers:
+        - name: frontend-web
+          image: ramafebri/karsajobs-ui:latest
+          env:
+            - name: VUE_APP_BACKEND
+              # DNS for service discovery
+              # Naming pattern:
+              #   IP address: <service_name>.<service_namespace>
+              #   Port: needs to be extracted from SRV DNS record
+              value: http://192.168.49.2:30759
